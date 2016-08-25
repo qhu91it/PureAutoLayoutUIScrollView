@@ -14,9 +14,17 @@ machine:
     # GYM_CODE_SIGNING_IDENTITY: "iPhone Distribution: Acme Inc. (GL31ZZ3256)"
 
 dependencies:
-  pre:
-    - brew update || brew update
-    - brew outdated xctool || brew upgrade xctool
+    override:
+        - sudo gem install calabash-cucumber
+        - sudo gem install cocoapods
+
+
+test:
+    pre:
+        - pod setup
+        - pod install
+    post:
+        - cucumber
 
 # test:
 #   override:
