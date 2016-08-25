@@ -1,73 +1,44 @@
 ## Customize the test machine
+# general:
+  # if the application is *not* in the root of the repo but
+  # in the sub-directory called "ios-app"
+  # build_dir: ios-app
+
 machine:
-
   timezone:
-    America/Los_Angeles # Set the timezone
+    Asia/Ho_Chi_Minh # Set the timezone
+  xcode:
+    version: "7.3"
+  # environment:
+    # please specify your code signing identity name here
+    # GYM_CODE_SIGNING_IDENTITY: "iPhone Distribution: Acme Inc. (GL31ZZ3256)"
 
-  # Version of ruby to use
-  ruby:
-    version:
-      1.8.7-p358-falcon-perf
-
-  # Override /etc/hosts
-  hosts:
-    circlehost: 127.0.0.1
-    dev.mycompany.com: 127.0.0.1
-
-  # Add some environment variables
-  environment:
-    CIRCLE_ENV: test
-    DATABASE_URL: postgres://ubuntu:@127.0.0.1:5432/circle_test
-
-## Customize checkout
-checkout:
-  post:
-    - git submodule sync
-    - git submodule update --init # use submodules
-
-## Customize dependencies
 dependencies:
   pre:
-    - npm install coffeescript # install from a different package manager
-    - gem uninstall bundler # use a custom version of bundler
-    - gem install bundler --pre
+    - brew update || brew update
+    - brew outdated xctool || brew upgrade xctool
 
-  override:
-    - bundle install: # note ':' here
-        timeout: 180 # fail if command has no output for 3 minutes
+# test:
+#   override:
+#     - set -o pipefail &&
+#       xcodebuild
+#         CODE_SIGNING_REQUIRED=NO
+#         CODE_SIGN_IDENTITY=
+#         PROVISIONING_PROFILE=
+#         -sdk iphonesimulator
+#         -destination 'platform=iOS Simulator,OS=9.0,name=iPhone 6'
+#         -scheme "PureAutoLayoutUIScrollView"
+#         clean build test |
+#       tee $CIRCLE_ARTIFACTS/xcode_raw.log |
+#       xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
 
-  # we automatically cache and restore many dependencies between
-  # builds. If you need to, you can add custom paths to cache:
-  cache_directories:
-    - "custom_1"   # relative to the build directory
-    - "~/custom_2" # relative to the user's home directory
-
-## Customize database setup
-database:
-  override:
-    # replace CircleCI's generated database.yml
-    - cp config/database.yml.ci config/database.yml
-    - bundle exec rake db:create db:schema:load
-
-## Customize test commands
-test:
-  override:
-    - phpunit test/unit-tests # use PHPunit for testing
-  post:
-    - bundle exec rake jasmine:ci: # add an extra test type
-        environment:
-          RAILS_ENV: test
-          RACK_ENV: test
-
-## Customize deployment commands
-deployment:
-  staging:
-    branch: master
-    heroku:
-      appname: foo-bar-123
-
-## Custom notifications
-notify:
-  webhooks:
-    # A list of hashes representing hooks. Only the url field is supported.
-    - url: https://someurl.com/hooks/circle
+# deployment:
+#   beta_distribution: # just a label, can be anything
+#     branch: master
+#       commands:
+        # this will build the ipa file
+        # - gym --scheme "PureAutoLayoutUIScrollView" --workspace "PureAutoLayoutUIScrollView.xcworkspace"
+        # - ipa distribute:crashlytics
+        #     --crashlytics_path Crashlytics.framework
+        #     --api_token    "$CRASHLYTICS_API_KEY"
+        #     --build_secret "$CRASHLYTICS_SECRET"
