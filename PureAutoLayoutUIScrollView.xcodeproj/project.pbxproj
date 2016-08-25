@@ -15,6 +15,14 @@
 		C46E6F781CC60F9900616ECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C46E6F761CC60F9900616ECE /* LaunchScreen.storyboard */; };
 		C46E6F831CC60F9900616ECE /* PureAutoLayoutUIScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C46E6F821CC60F9900616ECE /* PureAutoLayoutUIScrollViewTests.m */; };
 		C46E6F8E1CC60F9900616ECE /* PureAutoLayoutUIScrollViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C46E6F8D1CC60F9900616ECE /* PureAutoLayoutUIScrollViewUITests.m */; };
+		C47846501D6F05950020D28A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C46E6F6F1CC60F9900616ECE /* ViewController.m */; };
+		C47846511D6F05950020D28A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C46E6F6C1CC60F9800616ECE /* AppDelegate.m */; };
+		C47846521D6F05950020D28A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C46E6F691CC60F9800616ECE /* main.m */; };
+		C47846551D6F05950020D28A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C46E6F761CC60F9900616ECE /* LaunchScreen.storyboard */; };
+		C47846561D6F05950020D28A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C46E6F741CC60F9900616ECE /* Assets.xcassets */; };
+		C47846571D6F05950020D28A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C46E6F711CC60F9900616ECE /* Main.storyboard */; };
+		C478465E1D6F065F0020D28A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C478465D1D6F065F0020D28A /* CFNetwork.framework */; };
+		C47846601D6F072B0020D28A /* calabash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C478465F1D6F072B0020D28A /* calabash.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +59,9 @@
 		C46E6F891CC60F9900616ECE /* PureAutoLayoutUIScrollViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PureAutoLayoutUIScrollViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46E6F8D1CC60F9900616ECE /* PureAutoLayoutUIScrollViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PureAutoLayoutUIScrollViewUITests.m; sourceTree = "<group>"; };
 		C46E6F8F1CC60F9900616ECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C478465B1D6F05950020D28A /* PureAutoLayoutUIScrollView-cal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PureAutoLayoutUIScrollView-cal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C478465D1D6F065F0020D28A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C478465F1D6F072B0020D28A /* calabash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = calabash.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C47846601D6F072B0020D28A /* calabash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,12 +87,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C47846531D6F05950020D28A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C478465E1D6F065F0020D28A /* CFNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		C46E6F5C1CC60F9800616ECE = {
 			isa = PBXGroup;
 			children = (
+				C478465F1D6F072B0020D28A /* calabash.framework */,
+				C478465D1D6F065F0020D28A /* CFNetwork.framework */,
 				C46E6F671CC60F9800616ECE /* PureAutoLayoutUIScrollView */,
 				C46E6F811CC60F9900616ECE /* PureAutoLayoutUIScrollViewTests */,
 				C46E6F8C1CC60F9900616ECE /* PureAutoLayoutUIScrollViewUITests */,
@@ -94,6 +116,7 @@
 				C46E6F651CC60F9800616ECE /* PureAutoLayoutUIScrollView.app */,
 				C46E6F7E1CC60F9900616ECE /* PureAutoLayoutUIScrollViewTests.xctest */,
 				C46E6F891CC60F9900616ECE /* PureAutoLayoutUIScrollViewUITests.xctest */,
+				C478465B1D6F05950020D28A /* PureAutoLayoutUIScrollView-cal.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,6 +219,23 @@
 			productReference = C46E6F891CC60F9900616ECE /* PureAutoLayoutUIScrollViewUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		C478464E1D6F05950020D28A /* PureAutoLayoutUIScrollView-cal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C47846581D6F05950020D28A /* Build configuration list for PBXNativeTarget "PureAutoLayoutUIScrollView-cal" */;
+			buildPhases = (
+				C478464F1D6F05950020D28A /* Sources */,
+				C47846531D6F05950020D28A /* Frameworks */,
+				C47846541D6F05950020D28A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PureAutoLayoutUIScrollView-cal";
+			productName = PureAutoLayoutUIScrollView;
+			productReference = C478465B1D6F05950020D28A /* PureAutoLayoutUIScrollView-cal.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -237,6 +277,7 @@
 				C46E6F641CC60F9800616ECE /* PureAutoLayoutUIScrollView */,
 				C46E6F7D1CC60F9900616ECE /* PureAutoLayoutUIScrollViewTests */,
 				C46E6F881CC60F9900616ECE /* PureAutoLayoutUIScrollViewUITests */,
+				C478464E1D6F05950020D28A /* PureAutoLayoutUIScrollView-cal */,
 			);
 		};
 /* End PBXProject section */
@@ -266,6 +307,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C47846541D6F05950020D28A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C47846551D6F05950020D28A /* LaunchScreen.storyboard in Resources */,
+				C47846561D6F05950020D28A /* Assets.xcassets in Resources */,
+				C47846571D6F05950020D28A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -292,6 +343,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C46E6F8E1CC60F9900616ECE /* PureAutoLayoutUIScrollViewUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C478464F1D6F05950020D28A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C47846501D6F05950020D28A /* ViewController.m in Sources */,
+				C47846511D6F05950020D28A /* AppDelegate.m in Sources */,
+				C47846521D6F05950020D28A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +477,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PureAutoLayoutUIScrollView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hung.learn.to.ios.PureAutoLayoutUIScrollView;
@@ -427,6 +492,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PureAutoLayoutUIScrollView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hung.learn.to.ios.PureAutoLayoutUIScrollView;
@@ -482,6 +551,38 @@
 			};
 			name = Release;
 		};
+		C47846591D6F05950020D28A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PureAutoLayoutUIScrollView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-force_load",
+					"\"$(SOURCE_ROOT)/calabash.framework/calabash\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hung.learn.to.ios.PureAutoLayoutUIScrollView-cal";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C478465A1D6F05950020D28A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PureAutoLayoutUIScrollView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-force_load",
+					"\"$(SOURCE_ROOT)/calabash.framework/calabash\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hung.learn.to.ios.PureAutoLayoutUIScrollView-cal";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -517,6 +618,15 @@
 			buildConfigurations = (
 				C46E6F991CC60F9900616ECE /* Debug */,
 				C46E6F9A1CC60F9900616ECE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C47846581D6F05950020D28A /* Build configuration list for PBXNativeTarget "PureAutoLayoutUIScrollView-cal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C47846591D6F05950020D28A /* Debug */,
+				C478465A1D6F05950020D28A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

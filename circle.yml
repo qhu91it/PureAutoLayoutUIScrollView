@@ -20,9 +20,10 @@ dependencies:
 
 
 test:
-    pre:
-        - pod setup
-        - pod install
+    # pre:
+        # - pod setup
+        # - pod install
+        # - cucumber --init
     post:
         - cucumber
 
