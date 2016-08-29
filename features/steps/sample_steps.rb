@@ -53,20 +53,19 @@ end
 Then(/^The Internet is online$/) do
   %x[networksetup -setairportpower en1 on]
   %x[sudo ifconfig en0 up]
+  sleep(5)
 end
 
 Then(/^Check the Internet status$/) do
-  if internet_connection
-    put 'Online'
+  if check_internet
+    puts('Online')
   else
-    fail 'Offline'
+    puts('Offline')
   end
 end
 
-def internet_connection?
- begin
-   true if open("http://www.google.com/")
- rescue
-   false
- end
+def check_internet
+  return true if open("http://www.google.com/")
+rescue
+  return false
 end
