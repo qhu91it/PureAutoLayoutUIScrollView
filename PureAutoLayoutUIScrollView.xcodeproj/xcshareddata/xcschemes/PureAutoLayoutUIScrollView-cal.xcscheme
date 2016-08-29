@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C46E6F7D1CC60F9900616ECE"
+               BuildableName = "PureAutoLayoutUIScrollViewTests.xctest"
+               BlueprintName = "PureAutoLayoutUIScrollViewTests"
+               ReferencedContainer = "container:PureAutoLayoutUIScrollView.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C46E6F881CC60F9900616ECE"
+               BuildableName = "PureAutoLayoutUIScrollViewUITests.xctest"
+               BlueprintName = "PureAutoLayoutUIScrollViewUITests"
+               ReferencedContainer = "container:PureAutoLayoutUIScrollView.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

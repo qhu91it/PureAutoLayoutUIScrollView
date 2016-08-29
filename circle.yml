@@ -1,9 +1,4 @@
 ## Customize the test machine
-# general:
-  # if the application is *not* in the root of the repo but
-  # in the sub-directory called "ios-app"
-  # build_dir: ios-app
-
 machine:
   timezone:
     Asia/Ho_Chi_Minh # Set the timezone
@@ -15,39 +10,17 @@ machine:
 
 dependencies:
     override:
+        # - gem update
         - sudo gem install calabash-cucumber
         - sudo gem install cocoapods
+        - bundle install
+        - gem list
 
 
 test:
-    # pre:
+    pre:
         # - pod setup
         # - pod install
-        # - cucumber --init
     post:
-        - cucumber
-
-# test:
-#   override:
-#     - set -o pipefail &&
-#       xcodebuild
-#         CODE_SIGNING_REQUIRED=NO
-#         CODE_SIGN_IDENTITY=
-#         PROVISIONING_PROFILE=
-#         -sdk iphonesimulator
-#         -destination 'platform=iOS Simulator,OS=9.0,name=iPhone 6'
-#         -scheme "PureAutoLayoutUIScrollView"
-#         clean build test |
-#       tee $CIRCLE_ARTIFACTS/xcode_raw.log |
-#       xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
-
-# deployment:
-#   beta_distribution: # just a label, can be anything
-#     branch: master
-#       commands:
-        # this will build the ipa file
-        # - gym --scheme "PureAutoLayoutUIScrollView" --workspace "PureAutoLayoutUIScrollView.xcworkspace"
-        # - ipa distribute:crashlytics
-        #     --crashlytics_path Crashlytics.framework
-        #     --api_token    "$CRASHLYTICS_API_KEY"
-        #     --build_secret "$CRASHLYTICS_SECRET"
+        # - cucumber
+        - bundle exec cucumber

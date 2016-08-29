@@ -3,5 +3,8 @@ Feature: Sample Feature
 Scenario: Sample Scenario
   Given the app has launched
   And I have done a specific thing
-  When I do something
-  Then something should happen
+  And Check the Internet status
+  When The Internet is down
+  Then Check the Internet status
+  When The Internet is online
+  Then Check the Internet status

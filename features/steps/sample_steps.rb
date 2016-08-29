@@ -1,3 +1,5 @@
+require 'open-uri'
+
 Given(/^the app has launched$/) do
   wait_for do
     !query("*").empty?
@@ -43,3 +45,28 @@ Then(/^something should happen$/) do
   #  wait_for_element_exists("* text:'My Entry'")
 end
 
+Then(/^The Internet is down$/) do
+  %x[networksetup -setairportpower en1 off]
+  %x[sudo ifconfig en0 down]
+end
+
+Then(/^The Internet is online$/) do
+  %x[networksetup -setairportpower en1 on]
+  %x[sudo ifconfig en0 up]
+end
+
+Then(/^Check the Internet status$/) do
+  if internet_connection
+    put 'Online'
+  else
+    fail 'Offline'
+  end
+end
+
+def internet_connection?
+ begin
+   true if open("http://www.google.com/")
+ rescue
+   false
+ end
+end
