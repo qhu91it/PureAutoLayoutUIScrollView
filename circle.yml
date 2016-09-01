@@ -4,8 +4,6 @@ machine:
     Asia/Ho_Chi_Minh # Set the timezone
   xcode:
     version: "7.3"
-  ruby:
-    version: rbx-2.2.6
   # environment:
     # please specify your code signing identity name here
     # GYM_CODE_SIGNING_IDENTITY: "iPhone Distribution: Acme Inc. (GL31ZZ3256)"
@@ -17,23 +15,16 @@ dependencies:
         - sudo gem install cocoapods
         - bundle install
         # - gem list
-        - brew install node
-        - node -v
-        - npm -v
         - npm install -g express
-        - ls
-        - features/server/cliclick kd:cmd t:t
-        - sleep 5
-        - cd features/server
-        - node server.js
-        - ./cliclick kd:cmd t:{
-        - curl http://127.0.0.1:8081/listUsers
 
 
 test:
     pre:
         # - pod setup
         # - pod install
+        - node features/server/server.js:
+            background: true
+        - curl http://127.0.0.1:8081/listUsers
     post:
         # - cucumber
         - bundle exec cucumber
