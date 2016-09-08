@@ -10,21 +10,21 @@ machine:
 
 dependencies:
     override:
-        # - gem update
         - sudo gem install calabash-cucumber
         - sudo gem install cocoapods
         - bundle install
-        # - gem list
+        - brew install imagemagick
         - npm install -g express
-
+        - npm install handlebars hbsfy
+        - pod install
+        - ls
 
 test:
     pre:
-        # - pod setup
-        # - pod install
         - node features/server/server.js:
             background: true
         - curl http://127.0.0.1:8081/listUsers
+    override:
+        - set -o pipefail && xcodebuild -workspace 'PureAutoLayoutUIScrollView.xcworkspace' -scheme 'PureAutoLayoutUIScrollView-cal' clean build test -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest' CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= PROVISIONING_PROFILE= | tee $CIRCLE_ARTIFACTS/xcode_raw.log | xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
     post:
-        # - cucumber
         - bundle exec cucumber

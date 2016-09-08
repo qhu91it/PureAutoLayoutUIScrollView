@@ -23,6 +23,7 @@
 		C47846571D6F05950020D28A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C46E6F711CC60F9900616ECE /* Main.storyboard */; };
 		C478465E1D6F065F0020D28A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C478465D1D6F065F0020D28A /* CFNetwork.framework */; };
 		C47846601D6F072B0020D28A /* calabash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C478465F1D6F072B0020D28A /* calabash.framework */; };
+		D61AB382D68D0466466E4A6E /* Pods_PureAutoLayoutUIScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 480832465D2B74CB37D567EC /* Pods_PureAutoLayoutUIScrollView.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		480832465D2B74CB37D567EC /* Pods_PureAutoLayoutUIScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PureAutoLayoutUIScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64173C8B9FAF17B5711E7DD5 /* Pods-PureAutoLayoutUIScrollView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PureAutoLayoutUIScrollView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PureAutoLayoutUIScrollView/Pods-PureAutoLayoutUIScrollView.debug.xcconfig"; sourceTree = "<group>"; };
+		86B5ECC294C2C474EE101972 /* Pods-PureAutoLayoutUIScrollView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PureAutoLayoutUIScrollView.release.xcconfig"; path = "Pods/Target Support Files/Pods-PureAutoLayoutUIScrollView/Pods-PureAutoLayoutUIScrollView.release.xcconfig"; sourceTree = "<group>"; };
 		C46E6F651CC60F9800616ECE /* PureAutoLayoutUIScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PureAutoLayoutUIScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46E6F691CC60F9800616ECE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C46E6F6B1CC60F9800616ECE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C47846601D6F072B0020D28A /* calabash.framework in Frameworks */,
+				D61AB382D68D0466466E4A6E /* Pods_PureAutoLayoutUIScrollView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +103,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72ADF3F35648B160D8E85728 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				480832465D2B74CB37D567EC /* Pods_PureAutoLayoutUIScrollView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A8604928DE3A627B79B8A828 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				64173C8B9FAF17B5711E7DD5 /* Pods-PureAutoLayoutUIScrollView.debug.xcconfig */,
+				86B5ECC294C2C474EE101972 /* Pods-PureAutoLayoutUIScrollView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C46E6F5C1CC60F9800616ECE = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +129,8 @@
 				C46E6F811CC60F9900616ECE /* PureAutoLayoutUIScrollViewTests */,
 				C46E6F8C1CC60F9900616ECE /* PureAutoLayoutUIScrollViewUITests */,
 				C46E6F661CC60F9800616ECE /* Products */,
+				A8604928DE3A627B79B8A828 /* Pods */,
+				72ADF3F35648B160D8E85728 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,9 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C46E6F921CC60F9900616ECE /* Build configuration list for PBXNativeTarget "PureAutoLayoutUIScrollView" */;
 			buildPhases = (
+				9E686BCC12B0B52C0FA4A3DD /* [CP] Check Pods Manifest.lock */,
 				C46E6F611CC60F9800616ECE /* Sources */,
 				C46E6F621CC60F9800616ECE /* Frameworks */,
 				C46E6F631CC60F9800616ECE /* Resources */,
+				009ADCE82132205A769B8D6D /* [CP] Embed Pods Frameworks */,
+				8E7CC14A952D706C530E22A8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,6 +345,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		009ADCE82132205A769B8D6D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PureAutoLayoutUIScrollView/Pods-PureAutoLayoutUIScrollView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E7CC14A952D706C530E22A8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PureAutoLayoutUIScrollView/Pods-PureAutoLayoutUIScrollView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E686BCC12B0B52C0FA4A3DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C46E6F611CC60F9800616ECE /* Sources */ = {
@@ -475,6 +550,7 @@
 		};
 		C46E6F931CC60F9900616ECE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64173C8B9FAF17B5711E7DD5 /* Pods-PureAutoLayoutUIScrollView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -492,6 +568,7 @@
 		};
 		C46E6F941CC60F9900616ECE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86B5ECC294C2C474EE101972 /* Pods-PureAutoLayoutUIScrollView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
